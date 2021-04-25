@@ -18,7 +18,7 @@ public class MudaService {
 
     public List<MudaDTO> getMudas(){
 
-        List<Muda> mudaList = repo.getMudas();
+        List<Muda> mudaList = repo.findAll();
 
         List<MudaDTO> mudaListDTO = new ArrayList<>();
 

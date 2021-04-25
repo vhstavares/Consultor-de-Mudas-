@@ -4,7 +4,6 @@ package com.colheita.pa.controllers;
 import java.util.List;
 
 import com.colheita.pa.dto.MudaDTO;
-import com.colheita.pa.entities.Muda;
 import com.colheita.pa.services.MudaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
