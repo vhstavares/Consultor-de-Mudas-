@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.colheita.pa.dto.InsertMudaDTO;
+
 @Entity
 @Table(name="TB_Muda")
 public class Muda implements Serializable {
@@ -35,6 +37,25 @@ public class Muda implements Serializable {
     private String nomePopular2;
     private String nomeCientifico;
 
+    public Muda() {
+    }
+
+    // cria uma nova entidade
+    public Muda(InsertMudaDTO insertDTO) {
+        this.regiao         = insertDTO.getRegiao();
+        this.solo           = insertDTO.getSolo();
+        this.bioma          = insertDTO.getBioma();
+        this.frutifera      = insertDTO.isFrutifera();
+        this.especie        = insertDTO.getEspecie();
+        //this.familia      = insertDTO.getFamilia();  ???
+        //this.subfamilia   = insertDTO.getSubfamilia(); ??? 
+        //this.genero       = insertDTO.getGenero(); ???
+        //this.epiteto      = insertDTO.getEpiteto(); ???
+        ///this.variedade   = insertDTO.getVariedade() ???
+        this.nomePopular1   = insertDTO.getNomePopular1();
+        this.nomePopular2   = insertDTO.getNomePopular2();
+        this.nomeCientifico = insertDTO.getNomeCientifico();
+    }
     // get and setters
     public long getId() {
         return id;
