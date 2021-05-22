@@ -21,8 +21,6 @@ public class RegiaoDTO {
         this.mudas = mudas;
     }
 
-
-
     public RegiaoDTO(Regiao regiao) {
         this.nomeRegiao = regiao.getNomeRegiao();
         this.mudas = regiao.getMudas();
