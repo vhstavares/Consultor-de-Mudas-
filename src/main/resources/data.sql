@@ -1,4 +1,8 @@
--- INSERT 1 para testes
-INSERT INTO tb_Muda (regiao, solo, bioma, frutifera,  especie, familia, subfamilia, genero, epiteto, variedade)
-VALUES
-('regiao', 'solo', 'bioma',  true, 'especie',  'familia',  'subfamilia',  'genero',  'epiteto', 'variedade');
+INSERT INTO MUDA (frutifera, nome_muda)
+VALUES(1,'tetste');
+
+INSERT INTO REGIAO (nome_regiao)
+VALUES('SP');
+
+INSERT INTO MUDA_REGIAO (MUDA_ID, REGIAO_ID)
+VALUES(1,1);

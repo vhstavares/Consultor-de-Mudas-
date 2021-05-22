@@ -3,6 +3,7 @@ package com.colheita.pa.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -11,6 +12,7 @@ import com.colheita.pa.dto.UpdateMudaDTO;
 import com.colheita.pa.dto.InsertMudaDTO;
 import com.colheita.pa.entities.Muda;
 import com.colheita.pa.repositories.MudaRepository;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -63,17 +65,19 @@ public class MudaService {
 
     }
 
-    public MudaDTO update(Long id, UpdateMudaDTO updateDTO){
+    /*public MudaDTO update(Long id, UpdateMudaDTO updateDTO){
         
         Muda entity = repo.getOne(id);
         try{
+        	
+        	entity.getRegioes(updateDTO.getRegiao());
             
-            entity.setFrutifera(updateDTO.isFrutifera());
-            entity.setBioma(updateDTO.getBioma());
-            entity.setSolo(updateDTO.getSolo());
-            entity.setRegiao(updateDTO.getRegiao());
-            entity.setEspecie(updateDTO.getEspecie());
-            entity = repo.save(entity);
+//            entity.setFrutifera(updateDTO.isFrutifera());
+//            entity.setBioma(updateDTO.getBioma());
+//            entity.setSolo(updateDTO.getSolo());
+//            entity.setRegiao(updateDTO.getRegiao());
+//            entity.setEspecie(updateDTO.getEspecie());
+//            entity = repo.save(entity);
         }
         catch(EntityNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
@@ -81,21 +85,22 @@ public class MudaService {
 
         return new MudaDTO(entity);
 
-    }
+    }*/
     
 
 
     // metodo que tramsforma Muda em MudaDTO
     private List<MudaDTO> toDTOList(List<Muda> list){
-        List<MudaDTO> mudaListDTO = new ArrayList<>();
+        //List<MudaDTO> mudaListDTO = new ArrayList<>();
 
-        for(Muda c: list){
+        /*for(Muda c: list){
             mudaListDTO.add(new MudaDTO(c.getId(), c.getRegiao(), c.getSolo(), c.getBioma(), 
                                         c.getEspecie(), c.getNomePopular1(), c.getNomePopular2(), 
                                         c.getNomeCientifico(), c.isFrutifera()));
-        }
+        }*/
 
-        return mudaListDTO;
+        return list.stream().map(MudaDTO::new).collect(Collectors.toList());
+        //return mudaListDTO;
     }
 
 }
