@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.colheita.pa.entities.Muda;
 import com.colheita.pa.entities.Regiao;
+import com.colheita.pa.entities.Solo;
 import com.colheita.pa.entities.Bioma;
 
 public class MudaDTO {
@@ -34,7 +35,10 @@ public class MudaDTO {
 		this.biomas = muda.getBiomas();
 	}
 
-	public long getId() {
+	public MudaDTO(Solo solo) {
+    }
+
+    public long getId() {
 		return id;
 	}
 
