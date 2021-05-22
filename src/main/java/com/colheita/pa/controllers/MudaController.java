@@ -11,6 +11,7 @@ import com.colheita.pa.services.MudaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/mudas") // rota para o front end
+@CrossOrigin
 public class MudaController {
     
     @Autowired // evita nullException no MudaService
@@ -66,13 +68,13 @@ public class MudaController {
 
     }
 
-    @PutMapping("{id}")
+    /*@PutMapping("{id}")
     public ResponseEntity<MudaDTO> update(@RequestBody UpdateMudaDTO updateDto, @PathVariable Long id){
         
         MudaDTO dto = service.update(id, updateDto);
         return ResponseEntity.ok().body(dto);
         
-    }
+    }*/
 
 
 }
