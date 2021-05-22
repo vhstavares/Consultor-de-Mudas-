@@ -1,4 +1,4 @@
-package com.colheita.pa.dto;
+package com.colheita.pa.dto.mudaDTO;
 
 import java.util.ArrayList;
 
@@ -49,6 +49,22 @@ public class UpdateMudaDTO {
 	public void setRegioes(ArrayList<Regiao> regioes) {
 		this.regioes = regioes;
 	}
+
+    public Object getBioma() {
+        return null;
+    }
+
+    public Object getSolo() {
+        return null;
+    }
+
+    public Object getRegiao() {
+        return null;
+    }
+
+    public Object getEspecie() {
+        return null;
+    }
     
     
     

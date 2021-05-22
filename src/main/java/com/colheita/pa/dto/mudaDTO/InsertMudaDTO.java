@@ -1,4 +1,4 @@
-package com.colheita.pa.dto;
+package com.colheita.pa.dto.mudaDTO;
 
 public class InsertMudaDTO {
 

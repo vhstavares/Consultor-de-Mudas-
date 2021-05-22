@@ -4,11 +4,10 @@ package com.colheita.pa.controllers;
 import java.net.URI;
 import java.util.List;
 
-import com.colheita.pa.dto.InsertMudaDTO;
-import com.colheita.pa.dto.MudaDTO;
-import com.colheita.pa.dto.UpdateMudaDTO;
+import com.colheita.pa.dto.mudaDTO.InsertMudaDTO;
+import com.colheita.pa.dto.mudaDTO.MudaDTO;
+import com.colheita.pa.dto.mudaDTO.UpdateMudaDTO;
 import com.colheita.pa.services.MudaService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,7 +31,7 @@ public class MudaController {
     @Autowired // evita nullException no MudaService
     private MudaService service;
 
-    @GetMapping 
+    @GetMapping         //WORKING
     public ResponseEntity<List<MudaDTO>> getMudas(){
         
         List <MudaDTO> mudaList = service.getMudas();
@@ -40,7 +39,7 @@ public class MudaController {
         return ResponseEntity.ok().body(mudaList);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("{id}")         //WORKING
     public ResponseEntity<MudaDTO> getMudaByID(@PathVariable Long id){
 
         MudaDTO dto = service.getMudaByID(id);
@@ -49,7 +48,7 @@ public class MudaController {
 
     }
 
-    @PostMapping
+    @PostMapping            //WORKING
     public ResponseEntity<MudaDTO> insert(@RequestBody InsertMudaDTO insertDTO){
         
         MudaDTO dto = service.insert(insertDTO);
@@ -59,7 +58,7 @@ public class MudaController {
 
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("{id}")      //WORKING
     public ResponseEntity<Void> delete(@PathVariable Long id){
 
         service.delete(id);
@@ -68,13 +67,13 @@ public class MudaController {
 
     }
 
-    /*@PutMapping("{id}")
-    public ResponseEntity<MudaDTO> update(@RequestBody UpdateMudaDTO updateDto, @PathVariable Long id){
+    // @PutMapping("{id}")
+    // public ResponseEntity<MudaDTO> update(@RequestBody UpdateMudaDTO updateDto, @PathVariable Long id){
         
-        MudaDTO dto = service.update(id, updateDto);
-        return ResponseEntity.ok().body(dto);
-        
-    }*/
+    //     MudaDTO dto = service.update(id, updateDto);
+    //     return ResponseEntity.ok().body(dto);
+    
+    // }
 
 
 }

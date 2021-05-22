@@ -12,6 +12,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.colheita.pa.dto.regiaoDTO.InsertRegiaoDTO;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.io.Serializable;
@@ -79,6 +80,11 @@ public class Regiao implements Serializable {
 
 	public Regiao() {
 		super();
+	}
+
+
+
+	public Regiao(InsertRegiaoDTO insertDTO) {
 	}
 
 

@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
-import com.colheita.pa.dto.MudaDTO;
-import com.colheita.pa.dto.UpdateMudaDTO;
-import com.colheita.pa.dto.InsertMudaDTO;
+import com.colheita.pa.dto.mudaDTO.InsertMudaDTO;
+import com.colheita.pa.dto.mudaDTO.MudaDTO;
+import com.colheita.pa.dto.mudaDTO.UpdateMudaDTO;
 import com.colheita.pa.entities.Muda;
 import com.colheita.pa.repositories.MudaRepository;
 
@@ -60,32 +60,31 @@ public class MudaService {
            repo.deleteById(id);
        }
        catch (EmptyResultDataAccessException e) {
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Muda not found");
        }
 
     }
 
-    /*public MudaDTO update(Long id, UpdateMudaDTO updateDTO){
+    // public MudaDTO update(Long id, UpdateMudaDTO updateDTO){
         
-        Muda entity = repo.getOne(id);
-        try{
+    //     Muda entity = repo.getOne(id);
+    //     try{
         	
-        	entity.getRegioes(updateDTO.getRegiao());
-            
-//            entity.setFrutifera(updateDTO.isFrutifera());
-//            entity.setBioma(updateDTO.getBioma());
-//            entity.setSolo(updateDTO.getSolo());
-//            entity.setRegiao(updateDTO.getRegiao());
-//            entity.setEspecie(updateDTO.getEspecie());
-//            entity = repo.save(entity);
-        }
-        catch(EntityNotFoundException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
-        }
+    //     	entity.setRegioes(updateDTO.getRegioes());     
+    //        entity.setFrutifera(updateDTO.isFrutifera());
+    //        entity.setBiomas(updateDTO.getBioma());
+    //        entity.setSolo(updateDTO.getSolo());
+    //        entity.setRegiao(updateDTO.getRegiao());
+    //        entity.setEspecie(updateDTO.getEspecie());
+    //        entity = repo.save(entity);
+    //     }
+    //     catch(EntityNotFoundException e) {
+    //         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
+    //     }
 
-        return new MudaDTO(entity);
+    //     return new MudaDTO(entity);
 
-    }*/
+    // }
     
 
 

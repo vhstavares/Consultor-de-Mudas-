@@ -1,10 +1,11 @@
-package com.colheita.pa.dto;
+package com.colheita.pa.dto.mudaDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.colheita.pa.entities.Muda;
 import com.colheita.pa.entities.Regiao;
+import com.colheita.pa.entities.Bioma;
 
 public class MudaDTO {
 
@@ -12,12 +13,14 @@ public class MudaDTO {
     private boolean frutifera;
     private String nomeMuda;
     private List<Regiao> regioes = new ArrayList<>();
+	private List<Bioma> biomas = new ArrayList<>();
 
-    public MudaDTO(long id, boolean frutifera, String nomeMuda, ArrayList<Regiao> regioes) {
+    public MudaDTO(long id, boolean frutifera, String nomeMuda, ArrayList<Regiao> regioes, ArrayList<Bioma> biomas) {
 		this.id = id;
 		this.frutifera = frutifera;
 		this.nomeMuda = nomeMuda;
 		this.regioes = regioes;
+		this.biomas = biomas;
 	}
 
 	public MudaDTO() {
@@ -28,6 +31,7 @@ public class MudaDTO {
 		this.frutifera = muda.isFrutifera();
 		this.nomeMuda = muda.getNomeMuda();
 		this.regioes = muda.getRegioes();
+		this.biomas = muda.getBiomas();
 	}
 
 	public long getId() {
@@ -61,6 +65,20 @@ public class MudaDTO {
 	public void setRegioes(ArrayList<Regiao> regioes) {
 		this.regioes = regioes;
 	}
+
+	public void setRegioes(List<Regiao> regioes) {
+		this.regioes = regioes;
+	}
+
+	public List<Bioma> getBiomas() {
+		return biomas;
+	}
+
+	public void setBiomas(List<Bioma> biomas) {
+		this.biomas = biomas;
+	}
+
+	
 
     
 }

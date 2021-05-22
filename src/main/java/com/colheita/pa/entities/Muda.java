@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.colheita.pa.dto.InsertMudaDTO;
+import com.colheita.pa.dto.mudaDTO.InsertMudaDTO;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -25,14 +25,18 @@ public class Muda implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // gera PK automaticamente
     private long id;
 
-
     private boolean frutifera;
     private String nomeMuda;
-    
+
+    //mapeamento de entidades/tabelas
     @ManyToMany(mappedBy="mudas", cascade = CascadeType.ALL)
     @JsonBackReference
     private List<Regiao> regioes;
-    
+
+    @ManyToMany(mappedBy="mudas", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Bioma> biomas;
+
 
 
     public Muda() {
@@ -42,11 +46,6 @@ public class Muda implements Serializable {
     public Muda(InsertMudaDTO insertDTO) {
         
     }
-    
-    
-    // cria uma nova entidad
-
-    
 
 	@Override
     public int hashCode() {
@@ -86,13 +85,21 @@ public class Muda implements Serializable {
 		this.frutifera = frutifera;
 	}
 
-	public String getNomeMuda() {
-		return nomeMuda;
-	}
+    public String getNomeMuda() {
+        return nomeMuda;
+    }
 
-	public void setNomeMuda(String nomeMuda) {
-		this.nomeMuda = nomeMuda;
-	}
+    public void setNomeMuda(String nomeMuda) {
+        this.nomeMuda = nomeMuda;
+    }
+
+    public List<Bioma> getBiomas() {
+        return biomas;
+    }
+
+    public void setBiomas(List<Bioma> biomas) {
+        this.biomas = biomas;
+    }
 
     
 
