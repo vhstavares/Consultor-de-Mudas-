@@ -30,7 +30,7 @@ public class Bioma implements Serializable{
 	 @JoinTable(name="Muda_Solo",
 	             joinColumns={@JoinColumn(name="MUDA_ID")},
 	             inverseJoinColumns={@JoinColumn(name="Solo_ID")})
-	 @JsonBackReference
+	 //@JsonBackReference
 	 private List<Muda> mudas;
 
 

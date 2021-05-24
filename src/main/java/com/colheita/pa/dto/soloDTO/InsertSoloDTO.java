@@ -8,15 +8,15 @@ public class InsertSoloDTO {
     
     private long id;
     private String tipoSolo;
-    private List<Muda> mudas;
+    //private List<Muda> mudas;
     
-    public InsertSoloDTO() {
-    }
+    /*public InsertSoloDTO() {
+    }*/
 
-    public InsertSoloDTO(long id, String tipoSolo, List<Muda> mudas) {
+    public InsertSoloDTO(long id, String tipoSolo) {
         this.id = id;
         this.tipoSolo = tipoSolo;
-        this.mudas = mudas;
+        //this.mudas = mudas;
     }
 
     public long getId() {
@@ -35,13 +35,13 @@ public class InsertSoloDTO {
         this.tipoSolo = tipoSolo;
     }
 
-    public List<Muda> getMudas() {
-        return mudas;
-    }
-
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+//    public List<Muda> getMudas() {
+//        return mudas;
+//    }
+//
+//    public void setMudas(List<Muda> mudas) {
+//        this.mudas = mudas;
+//    }
 
     
 

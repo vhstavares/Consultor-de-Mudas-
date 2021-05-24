@@ -21,6 +21,7 @@ public class BiomaDTO {
     }
 
     public BiomaDTO(Bioma bioma) {
+    	this.id = bioma.getId();
         this.nomeBioma = bioma.getNomeBioma();
         this.mudas = bioma.getMudas();
     }

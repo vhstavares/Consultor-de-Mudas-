@@ -9,20 +9,21 @@ public class SoloDTO {
     
     private long id;
     private String tipoSolo;
-    private List<Muda> mudas;
+   // private List<Muda> mudas;
 
     public SoloDTO() {
     }
 
-    public SoloDTO(long id, String tipoSolo, List<Muda> mudas) {
+    public SoloDTO(long id, String tipoSolo) {
         this.id = id;
         this.tipoSolo = tipoSolo;
-        this.mudas = mudas;
+        //this.mudas = mudas;
     }
 
     public SoloDTO(Solo solo) {
+    	this.id = solo.getId();
         this.tipoSolo = solo.getTipoSolo();
-        this.mudas = solo.getMudas();
+        //this.mudas = solo.getMudas();
     }
 
     public long getId() {
@@ -41,12 +42,12 @@ public class SoloDTO {
         this.tipoSolo = tipoSolo;
     }
 
-    public List<Muda> getMudas() {
-        return mudas;
-    }
-
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+//    public List<Muda> getMudas() {
+//        return mudas;
+//    }
+//
+//    public void setMudas(List<Muda> mudas) {
+//        this.mudas = mudas;
+//    }
 
 }

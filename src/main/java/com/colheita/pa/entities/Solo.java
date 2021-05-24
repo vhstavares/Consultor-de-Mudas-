@@ -14,9 +14,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
 
 import com.colheita.pa.dto.soloDTO.InsertSoloDTO;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+//import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Solo implements Serializable{
     
     @Id
@@ -25,23 +28,25 @@ public class Solo implements Serializable{
 
     private String tipoSolo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="Muda_Solo",
                 joinColumns={@JoinColumn(name="MUDA_ID")},
                 inverseJoinColumns={@JoinColumn(name="SOLO_ID")})
-    @JsonBackReference
-    private List<Muda> mudas;
+    //@JsonBackReference
+    private List<Muda> mudas;*/
 
-    public Solo(long id, String tipoSolo, List<Muda> mudas) {
+    public Solo(long id, String tipoSolo) {
         this.id = id;
         this.tipoSolo = tipoSolo;
-        this.mudas = mudas;
+       
     }
 
     public Solo() {
     }
 
     public Solo(InsertSoloDTO insertDTO) {
+
+    	this.tipoSolo = insertDTO.getTipoSolo();
     }
 
     public long getId() {
@@ -60,20 +65,20 @@ public class Solo implements Serializable{
         this.tipoSolo = tipoSolo;
     }
 
-    public List<Muda> getMudas() {
-        return mudas;
-    }
-
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+//    public List<Muda> getMudas() {
+//        return mudas;
+//    }
+//
+//    public void setMudas(List<Muda> mudas) {
+//        this.mudas = mudas;
+//    }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + (int) (id ^ (id >>> 32));
-        result = prime * result + ((mudas == null) ? 0 : mudas.hashCode());
+        //result = prime * result + ((mudas == null) ? 0 : mudas.hashCode());
         result = prime * result + ((tipoSolo == null) ? 0 : tipoSolo.hashCode());
         return result;
     }
@@ -89,11 +94,11 @@ public class Solo implements Serializable{
         Solo other = (Solo) obj;
         if (id != other.id)
             return false;
-        if (mudas == null) {
-            if (other.mudas != null)
-                return false;
-        } else if (!mudas.equals(other.mudas))
-            return false;
+//        if (mudas == null) {
+//            if (other.mudas != null)
+//                return false;
+//        } else if (!mudas.equals(other.mudas))
+//            return false;
         if (tipoSolo == null) {
             if (other.tipoSolo != null)
                 return false;

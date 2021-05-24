@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
@@ -34,6 +36,7 @@ public class SoloController {
 
         return ResponseEntity.ok().body(soloList);
     }
+    
 
     @GetMapping("{id}")         //WORKING
     public ResponseEntity<SoloDTO> getSoloByID(@PathVariable Long id){
@@ -45,7 +48,7 @@ public class SoloController {
     }
 
     @PostMapping            //WORKING
-    public ResponseEntity<SoloDTO> insert(@RequestBody InsertSoloDTO insertDTO){
+    public ResponseEntity<SoloDTO> insert(@RequestBody InsertSoloDTO insertDTO) throws Exception {
         
         SoloDTO dto = service.insert(insertDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
