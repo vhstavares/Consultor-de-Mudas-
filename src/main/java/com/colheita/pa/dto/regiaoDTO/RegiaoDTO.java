@@ -15,16 +15,16 @@ public class RegiaoDTO {
     public RegiaoDTO() {
     }
 
-    public RegiaoDTO(long id, String nomeRegiao, List<Muda> mudas) {
+    public RegiaoDTO(long id, String nomeRegiao) {
         this.id = id;
         this.nomeRegiao = nomeRegiao;
-        this.mudas = mudas;
+        // this.mudas = mudas;
     }
 
     public RegiaoDTO(Regiao regiao) {
     	this.id = regiao.getId();
         this.nomeRegiao = regiao.getNomeRegiao();
-        this.mudas = regiao.getMudas();
+        // this.mudas = regiao.getMudas();
     }
 
     public long getId() {
@@ -39,11 +39,11 @@ public class RegiaoDTO {
     public void setNomeRegiao(String nomeRegiao) {
         this.nomeRegiao = nomeRegiao;
     }
-    public List<Muda> getMudas() {
-        return mudas;
-    }
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+    // public List<Muda> getMudas() {
+    //     return mudas;
+    // }
+    // public void setMudas(List<Muda> mudas) {
+    //     this.mudas = mudas;
+    // }
 
 }

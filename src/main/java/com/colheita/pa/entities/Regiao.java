@@ -42,7 +42,7 @@ public class Regiao implements Serializable {
 	 @JoinTable(name="Muda_Regiao",
 	             joinColumns={@JoinColumn(name="MUDA_ID")},
 	             inverseJoinColumns={@JoinColumn(name="REGIAO_ID")})
-	 //@JsonBackReference
+	 @JsonBackReference
 	 private List<Muda> mudas;
 	 
 
@@ -80,12 +80,12 @@ public class Regiao implements Serializable {
 
 
 	public Regiao() {
-		super();
 	}
 
 
 
 	public Regiao(InsertRegiaoDTO insertDTO) {
+		this.nomeRegiao = insertDTO.getNomeRegiao();
 	}
 
 
@@ -112,15 +112,15 @@ public class Regiao implements Serializable {
 
 
 
-	public List<Muda> getMudas() {
-		return mudas;
-	}
+	// public List<Muda> getMudas() {
+	// 	return mudas;
+	// }
 
 
 
-	public void setMudas(List<Muda> mudas) {
-		this.mudas = mudas;
-	}
+	// public void setMudas(List<Muda> mudas) {
+	// 	this.mudas = mudas;
+	// }
 
 	
 	
