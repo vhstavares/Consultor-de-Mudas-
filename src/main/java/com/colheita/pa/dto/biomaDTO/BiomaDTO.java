@@ -14,16 +14,16 @@ public class BiomaDTO {
     public BiomaDTO() {
     }
 
-    public BiomaDTO(long id, String nomeBioma, List<Muda> mudas) {
+    public BiomaDTO(long id, String nomeBioma) {
         this.id = id;
         this.nomeBioma = nomeBioma;
-        this.mudas = mudas;
+        // this.mudas = mudas;
     }
 
     public BiomaDTO(Bioma bioma) {
     	this.id = bioma.getId();
         this.nomeBioma = bioma.getNomeBioma();
-        this.mudas = bioma.getMudas();
+        // this.mudas = bioma.getMudas();
     }
 
     public long getId() {
@@ -42,13 +42,13 @@ public class BiomaDTO {
         this.nomeBioma = nomeBioma;
     }
 
-    public List<Muda> getMudas() {
-        return mudas;
-    }
+    // public List<Muda> getMudas() {
+    //     return mudas;
+    // }
 
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+    // public void setMudas(List<Muda> mudas) {
+    //     this.mudas = mudas;
+    // }
 
     
 }
