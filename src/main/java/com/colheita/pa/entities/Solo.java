@@ -28,12 +28,12 @@ public class Solo implements Serializable{
 
     private String tipoSolo;
 
-    /*@ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="Muda_Solo",
                 joinColumns={@JoinColumn(name="MUDA_ID")},
                 inverseJoinColumns={@JoinColumn(name="SOLO_ID")})
     //@JsonBackReference
-    private List<Muda> mudas;*/
+    private List<Muda> mudas;
 
     public Solo(long id, String tipoSolo) {
         this.id = id;
