@@ -25,7 +25,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="read()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -173,29 +173,55 @@
                                     <div class="col-lg-2 d-none d-lg-block"></div>
                                     <div class="col-lg-8">
                                         <div class="p-5">
-                                            <form class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control form-control-user" id="bioma" placeholder="Digite o nome do Bioma ...">
-                                                    </div>
-                                                </div>                                                
-                                                <br>
+
+                                            <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <input type="submit" class="btn btn-success btn-user btn-block" value="Registrar Bioma">
+                                                    <input type="text" class="form-control form-control-user" id="bioma" placeholder="Digite o nome do Bioma ...">
                                                 </div>
-                                            </form>                                            
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success btn-user btn-block" onclick="create()">Registrar Bioma</button>
+
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="col-lg-2 d-none d-lg-block"></div>
                                 </div>
-                            </div>                                                  
+                            </div>
                         </div>
                     </div>
                     <br>
 
                 </div>
                 <!-- /.container-fluid -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold" style="text-align: center;">Tela de Gerenciamento de Biomas</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Bioma</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody v-for ="bioma in biomas">
+                                    <tr>
+                                        <th>{{bioma.id}}</th>
+                                        <th>{{bioma.nomeBioma}}</th>
+                                        <th><a href="#" @click="deleta(bioma.id)" class="btn btn-danger">Delete</a></th>
+                                    </tr>
+                                </tbody>
 
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End of Main Content -->
 
@@ -240,6 +266,63 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        ///CRUD
+        function create() {
+            
+            var dados = {nomeBioma: document.getElementById("bioma").value};
+            console.log(dados);
+            axios({
+                method: 'post',
+                url: 'http://localhost:8080/biomas',
+                data: {nomeBioma: document.getElementById("bioma").value}
+        
+            }).catch((error) => console.log(error));
+            window.location.reload();
+
+            //read();
+            document.location.reload(true);
+            
+        }
+
+        function read() {
+            var app = new Vue(
+			{
+					el : '#dataTable',
+					data : {
+						biomas : []
+					},
+					mounted () {
+						axios.get('http://localhost:8080/biomas').then(response => (this.biomas = response.data));
+					},
+                    methods: {
+                        deleta: function(idBioma) {
+                            console.log(idBioma);
+                            axios({
+                                method: 'delete',
+                                url: 'http://localhost:8080/biomas/' + idBioma
+                            }).catch((error) => console.log(error));
+                            window.location.reload();
+
+                        }
+                    }
+                                    
+			});
+
+        }
+
+        function update(idBioma) {
+            axios({
+                method: 'put',
+                url: 'http://localhost:8080/biomas/' + idBioma,
+                data: {
+                    biomanomeBioma: document.getElementById("bioma").value
+                }
+            }).catch((error) => console.log(error));
+        }
+
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -256,9 +339,11 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
-    <script src="js/demo/datatables-demo.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="render.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </body>

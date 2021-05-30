@@ -54,20 +54,20 @@ public class Bioma implements Serializable{
     }
 
 
-    public List<Muda> getMudas() {
-        return mudas;
-    }
+    // public List<Muda> getMudas() {
+    //     return mudas;
+    // }
 
 
-    public void setMudas(List<Muda> mudas) {
-        this.mudas = mudas;
-    }
+    // public void setMudas(List<Muda> mudas) {
+    //     this.mudas = mudas;
+    // }
 
 
-    public Bioma(long id, String nomeBioma, List<Muda> mudas) {
+    public Bioma(long id, String nomeBioma) {
         this.id = id;
         this.nomeBioma = nomeBioma;
-        this.mudas = mudas;
+        // this.mudas = mudas;
     }
 
 
@@ -75,6 +75,7 @@ public class Bioma implements Serializable{
     }
 
     public Bioma(InsertBiomaDTO insertDTO) {
+        this.nomeBioma = insertDTO.getNomeBioma();
     }
 
 
@@ -83,7 +84,7 @@ public class Bioma implements Serializable{
         final int prime = 31;
         int result = 1;
         result = prime * result + (int) (id ^ (id >>> 32));
-        result = prime * result + ((mudas == null) ? 0 : mudas.hashCode());
+        // result = prime * result + ((mudas == null) ? 0 : mudas.hashCode());
         result = prime * result + ((nomeBioma == null) ? 0 : nomeBioma.hashCode());
         return result;
     }
@@ -100,11 +101,11 @@ public class Bioma implements Serializable{
         Bioma other = (Bioma) obj;
         if (id != other.id)
             return false;
-        if (mudas == null) {
-            if (other.mudas != null)
-                return false;
-        } else if (!mudas.equals(other.mudas))
-            return false;
+        // if (mudas == null) {
+        //     if (other.mudas != null)
+        //         return false;
+        // } else if (!mudas.equals(other.mudas))
+        //     return false;
         if (nomeBioma == null) {
             if (other.nomeBioma != null)
                 return false;
