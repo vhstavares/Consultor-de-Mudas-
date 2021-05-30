@@ -30,11 +30,11 @@ public class Muda implements Serializable {
 
     //mapeamento de entidades/tabelas
     @ManyToMany(mappedBy="mudas", cascade = CascadeType.ALL)
-    @JsonBackReference
+    //@JsonBackReference
     private List<Regiao> regioes;
 
     @ManyToMany(mappedBy="mudas", cascade = CascadeType.ALL)
-    @JsonBackReference
+    //@JsonBackReference
     private List<Bioma> biomas;
 
 

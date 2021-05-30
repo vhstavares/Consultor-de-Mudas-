@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -25,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="read()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -34,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">                
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-text mx-3">Consultor de Mudas</div>
             </a>
 
@@ -53,20 +51,18 @@
 
             <!-- Nav Item - Cadastro Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCadastros"
-                    aria-expanded="true" aria-controls="collapseCadastros">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCadastros" aria-expanded="true" aria-controls="collapseCadastros">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Cadastros</span>
                 </a>
-                <div id="collapseCadastros" class="collapse" aria-labelledby="headingCadastros"
-                    data-parent="#accordionSidebar">
+                <div id="collapseCadastros" class="collapse" aria-labelledby="headingCadastros" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="cadastro-mudas.html">Cadastro de Mudas</a>            
+                        <a class="collapse-item" href="cadastro-mudas.html">Cadastro de Mudas</a>
                         <a class="collapse-item" href="cadastro-especie.html">Cadastro de Espécies</a>
                         <a class="collapse-item" href="cadastro-regiao.html">Cadastro de Regiões</a>
-                        <a class="collapse-item active" href="cadastro-biomas.html">Cadastro de Biomas</a>
-                        <a class="collapse-item" href="cadastro-solos.html">Cadastro de Solos</a>                        
-                        <a class="collapse-item" href="cadastro-familia.html">Cadastro de Famílias</a>     
+                        <a class="collapse-item" href="cadastro-biomas.html">Cadastro de Biomas</a>
+                        <a class="collapse-item active" href="cadastro-solos.html">Cadastro de Solos</a>
+                        <a class="collapse-item" href="cadastro-familia.html">Cadastro de Famílias</a>
                     </div>
                 </div>
             </li>
@@ -76,18 +72,16 @@
 
             <!-- Nav Item - Cadastro Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTelasdeGerenciamento"
-                    aria-expanded="true" aria-controls="collapseTelasdeGerenciamento">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTelasdeGerenciamento" aria-expanded="true" aria-controls="collapseTelasdeGerenciamento">
                     <span>Telas de Gerenciamento</span>
                 </a>
-                <div id="collapseTelasdeGerenciamento" class="collapse" aria-labelledby="headingTelasdeGerenciamento"
-                    data-parent="#accordionSidebar">
+                <div id="collapseTelasdeGerenciamento" class="collapse" aria-labelledby="headingTelasdeGerenciamento" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="tela-gerenciamento.html" style="margin: 0 !important;">Gerenciamento de Mudas</a>
                         <a class="collapse-item" href="gerenciamento-regiao.html" style="margin: 0 !important;">Gerenciamento de Regiões</a>
                         <a class="collapse-item" href="gerenciamento-biomas.html" style="margin: 0 !important;">Gerenciamento de Biomas</a>
                         <a class="collapse-item" href="gerenciamento-solos.html" style="margin: 0 !important;">Gerenciamento de Solos</a>
-                        <a class="collapse-item" href="gerenciamento-familia.html" style="margin: 0 !important;">Gerenciamento de Famílias</a>                        
+                        <a class="collapse-item" href="gerenciamento-familia.html" style="margin: 0 !important;">Gerenciamento de Famílias</a>
                         <a class="collapse-item" href="gerenciamento-especie.html" style="margin: 0 !important;">Gerenciamento de Espécies</a>
                     </div>
                 </div>
@@ -105,7 +99,6 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
 
@@ -122,33 +115,27 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        
-                        
+
+
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nome Usuário</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Configurações
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Configurações
                                 </a>
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Sair
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair
                                 </a>
                             </div>
                         </li>
@@ -164,7 +151,7 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold" style="text-align: center;">Cadastro de Biomas</h6>
+                            <h6 class="m-0 font-weight-bold" style="text-align: center;">Cadastro de Solos</h6>
                         </div>
                         <div class="card-body">
                             <div class="card-body p-0">
@@ -173,31 +160,61 @@
                                     <div class="col-lg-2 d-none d-lg-block"></div>
                                     <div class="col-lg-8">
                                         <div class="p-5">
-                                            <form class="user">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control form-control-user" id="bioma" placeholder="Digite o nome do Bioma ...">
-                                                    </div>
-                                                </div>                                                
-                                                <br>
+
+                                            <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <input type="submit" class="btn btn-success btn-user btn-block" value="Registrar Bioma">
+                                                    <input type="text" class="form-control form-control-user" id="solo" placeholder="Digite o nome do Solo ...">
                                                 </div>
-                                            </form>                                            
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success btn-user btn-block" onclick="create()">Registrar Solo</button>
+
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="col-lg-2 d-none d-lg-block"></div>
                                 </div>
-                            </div>                                                  
+                            </div>
                         </div>
                     </div>
                     <br>
 
                 </div>
                 <!-- /.container-fluid -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold" style="text-align: center;">Tela de Gerenciamento de Solos</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Solo</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody v-for ="solo in solos">
+                                    <tr>
+                                        <th>{{solo.id}}</th>
+                                        <th>{{solo.tipoSolo}}</th>
+                                        <th><a href="#" @click="deleta(solo.id)" class="btn btn-danger">Delete</a></th>
+                                    </tr>
+                                </tbody>
 
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End of Main Content -->
+            <!-- Begin Page Content -->
+            
+            <!-- /.container-fluid -->
+
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -221,8 +238,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -240,6 +256,71 @@
         </div>
     </div>
 
+    
+    <script type="text/javascript">
+        ///CRUD
+        function create() {
+            //Post
+            //console.log(document.getElementById("solo").value);
+            var dados = {tipoSolo: document.getElementById("solo").value};
+            console.log(dados);
+            axios({
+                method: 'post',
+                url: 'http://localhost:8080/solos',
+                data: {tipoSolo: document.getElementById("solo").value}
+        
+            }).catch((error) => console.log(error));
+
+            //read();
+            document.location.reload(true);
+            
+        }
+
+        function read() {
+            var app = new Vue(
+			{
+					el : '#dataTable',
+					data : {
+						solos : []
+					},
+					mounted () {
+						axios.get('http://localhost:8080/solos').then(response => (this.solos = response.data));
+					},
+                    methods: {
+                        deleta: function(idSolo) {
+                            console.log(idSolo);
+                            axios({
+                                method: 'delete',
+                                url: 'http://localhost:8080/solos/' + idSolo
+                            }).catch((error) => console.log(error));
+
+                        }
+                    }
+                                    
+			});
+
+        }
+
+        function update(idSolo) {
+            axios({
+                method: 'put',
+                url: 'http://localhost:8080/solos/' + idSolo,
+                data: {
+                    solotipoSolo: document.getElementById("solo").value
+                }
+            }).catch((error) => console.log(error));
+        }
+
+        /*function deleta(idSolo) {
+            console.log(idSolo);
+            axios({
+                method: 'delete',
+                url: 'http://localhost:8080/solos/' + idSolo
+            }).catch((error) => console.log(error));
+
+        }*/
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -256,6 +337,12 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="render.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </body>
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Consultor de Mudas - Gerenciamento de Solos</title>
+    <title>Consultor de Mudas - Cadastros</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,7 +52,7 @@
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Cadastro Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCadastros"
                     aria-expanded="true" aria-controls="collapseCadastros">
                     <i class="fas fa-fw fa-table"></i>
@@ -64,7 +64,7 @@
                         <a class="collapse-item" href="cadastro-mudas.html">Cadastro de Mudas</a>            
                         <a class="collapse-item" href="cadastro-especie.html">Cadastro de Espécies</a>
                         <a class="collapse-item" href="cadastro-regiao.html">Cadastro de Regiões</a>
-                        <a class="collapse-item" href="cadastro-biomas.html">Cadastro de Biomas</a>
+                        <a class="collapse-item active" href="cadastro-biomas.html">Cadastro de Biomas</a>
                         <a class="collapse-item" href="cadastro-solos.html">Cadastro de Solos</a>                        
                         <a class="collapse-item" href="cadastro-familia.html">Cadastro de Famílias</a>     
                     </div>
@@ -75,7 +75,7 @@
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Nav Item - Cadastro Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTelasdeGerenciamento"
                     aria-expanded="true" aria-controls="collapseTelasdeGerenciamento">
                     <span>Telas de Gerenciamento</span>
@@ -86,7 +86,7 @@
                         <a class="collapse-item" href="tela-gerenciamento.html" style="margin: 0 !important;">Gerenciamento de Mudas</a>
                         <a class="collapse-item" href="gerenciamento-regiao.html" style="margin: 0 !important;">Gerenciamento de Regiões</a>
                         <a class="collapse-item" href="gerenciamento-biomas.html" style="margin: 0 !important;">Gerenciamento de Biomas</a>
-                        <a class="collapse-item active" href="gerenciamento-solos.html" style="margin: 0 !important;">Gerenciamento de Solos</a>
+                        <a class="collapse-item" href="gerenciamento-solos.html" style="margin: 0 !important;">Gerenciamento de Solos</a>
                         <a class="collapse-item" href="gerenciamento-familia.html" style="margin: 0 !important;">Gerenciamento de Famílias</a>                        
                         <a class="collapse-item" href="gerenciamento-especie.html" style="margin: 0 !important;">Gerenciamento de Espécies</a>
                     </div>
@@ -161,55 +161,37 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- DataTales Example -->
+
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold" style="text-align: center;">Tela de Gerenciamento de Solos</h6>
+                            <h6 class="m-0 font-weight-bold" style="text-align: center;">Cadastro de Biomas</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>         
-                                            <th>Solo</th>    
-                                            <th></th>                                      
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Id</th>        
-                                            <th>Solo</th> 
-                                            <th></th>                                          
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Solo 1</td>
-                                            <td style="text-align:center;">
-                                                <a href="#" style="color: red;">Remover</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Solo 2</td>
-                                            <td style="text-align:center;">
-                                                <a href="#" style="color: red;">Remover</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Solo 3</td>
-                                            <td style="text-align:center;">
-                                                <a href="#" style="color: red;">Remover</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-lg-2 d-none d-lg-block"></div>
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <form class="user">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control form-control-user" id="bioma" placeholder="Digite o nome do Bioma ...">
+                                                    </div>
+                                                </div>                                                
+                                                <br>
+                                                <div class="col-sm-12">
+                                                    <input type="submit" class="btn btn-success btn-user btn-block" value="Registrar Bioma">
+                                                </div>
+                                            </form>                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-none d-lg-block"></div>
+                                </div>
+                            </div>                                                  
                         </div>
                     </div>
+                    <br>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -274,6 +256,10 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </body>
 

@@ -35,13 +35,14 @@ public class Regiao implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY) 
 	 private long id;
 	 
-	 private String nomeRegiao;
+
+	private String nomeRegiao;
 	 
 	 @ManyToMany(cascade = CascadeType.ALL)
 	 @JoinTable(name="Muda_Regiao",
 	             joinColumns={@JoinColumn(name="MUDA_ID")},
 	             inverseJoinColumns={@JoinColumn(name="REGIAO_ID")})
-	 @JsonBackReference
+	 //@JsonBackReference
 	 private List<Muda> mudas;
 	 
 
@@ -94,7 +95,17 @@ public class Regiao implements Serializable {
 	}
 
 
+	 public long getId() {
+			return id;
+	}
 
+
+
+		public void setId(long id) {
+			this.id = id;
+	}
+		
+		
 	public void setNomeRegiao(String nomeRegiao) {
 		this.nomeRegiao = nomeRegiao;
 	}

@@ -22,6 +22,7 @@ public class RegiaoDTO {
     }
 
     public RegiaoDTO(Regiao regiao) {
+    	this.id = regiao.getId();
         this.nomeRegiao = regiao.getNomeRegiao();
         this.mudas = regiao.getMudas();
     }
