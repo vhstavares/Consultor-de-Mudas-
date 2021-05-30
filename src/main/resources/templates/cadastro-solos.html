@@ -270,6 +270,7 @@
                 data: {tipoSolo: document.getElementById("solo").value}
         
             }).catch((error) => console.log(error));
+            window.location.reload();
 
             //read();
             document.location.reload(true);
@@ -293,6 +294,7 @@
                                 method: 'delete',
                                 url: 'http://localhost:8080/solos/' + idSolo
                             }).catch((error) => console.log(error));
+                            window.location.reload();
 
                         }
                     }
@@ -319,6 +321,7 @@
             }).catch((error) => console.log(error));
 
         }*/
+
     </script>
 
     <!-- Bootstrap core JavaScript-->
